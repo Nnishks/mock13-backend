@@ -9,8 +9,10 @@ app.use(cors());
 app.get("/word", async (req, res) => {
     
     try {
-     
-      res.json({ status: "ok" , data:response});
+        let words = ['Nish', 'Hello', 'acha' , "ok"];
+        let word = words[Math.floor(Math.random()*words.length)];
+        res.json({ status: "ok" , data:word});
+        
     } catch (err) {
       console.log(err)
       res.json({ status: "error", error: err });
